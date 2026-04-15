@@ -212,9 +212,11 @@ nav{
   font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   padding:.9rem 2rem;
   background:#f0ede8;color:#0b0b0b;
+  border:none;
   border-radius:3px;transition:opacity .25s,transform .2s;
   display:inline-block;
 }
+.btn-solid{cursor:pointer}
 .btn-solid:hover{opacity:.85;transform:translateY(-2px)}
 .btn-outline{
   font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
@@ -531,6 +533,35 @@ nav{
 }
 .contact-sub{font-size:.88rem;line-height:1.7;color:rgba(240,237,232,.42);max-width:36ch}
 .cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
+.contact-form{
+  border:1px solid rgba(240,237,232,.12);
+  background:#111;
+  border-radius:4px;
+  padding:1.6rem 1.7rem;
+}
+.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.contact-form label{
+  display:block;
+  font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(240,237,232,.35);
+  margin-bottom:.5rem;
+}
+.contact-form input,.contact-form textarea{
+  width:100%;
+  background:#0b0b0b;
+  color:#f0ede8;
+  border:1px solid rgba(240,237,232,.14);
+  border-radius:3px;
+  padding:.85rem 1rem;
+  font-family:inherit;
+  font-size:.95rem;
+  outline:none;
+}
+.contact-form textarea{min-height:130px;resize:vertical}
+.contact-form input:focus,.contact-form textarea:focus{border-color:rgba(240,237,232,.45)}
+.contact-form .hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.contact-form .actions{margin-top:1rem;display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.contact-form .note{font-size:.78rem;line-height:1.6;color:rgba(240,237,232,.35)}
 
 /* ─────────────────────────────────────────────
    FOOTER
@@ -540,7 +571,6 @@ footer{
   display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;
   border-top:1px solid rgba(240,237,232,.1);
 }
-.f-brand{}
 .f-logo{
   font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:.12em;
   color:#f0ede8;margin-bottom:.6rem;
@@ -597,6 +627,7 @@ footer{
   .mindsets-grid{grid-template-columns:1fr}
   footer{grid-template-columns:1fr;padding:3rem 1.5rem calc(2.5rem + 36px)}
   .footer-bottom{flex-direction:column;gap:.4rem;text-align:center;padding:1.2rem 1.5rem calc(1.2rem + 36px)}
+  .contact-form .row{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -978,8 +1009,41 @@ footer{
       2+ years of software experience, an electrical engineering foundation,
       and a relentless drive to ship work that matters.
     </p>
+    <form
+      name="contact"
+      method="POST"
+      action="/thanks.html"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      class="contact-form"
+    >
+      <input type="hidden" name="form-name" value="contact"/>
+      <p class="hp">
+        <label>Don’t fill this out if you’re human: <input name="bot-field"/></label>
+      </p>
+
+      <div class="row">
+        <div>
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required/>
+        </div>
+        <div>
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required/>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" required></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-solid">Send via Form →</button>
+        <a href="mailto:gomolemontlhane@gmail.com" class="btn-outline">Email Instead</a>
+      </div>
+    </form>
     <div class="cta-row">
-      <a href="mailto:gomolemontlhane@gmail.com" class="btn-solid">Send a Message →</a>
       <a href="assets/2025%20CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline">Download CV</a>
     </div>
   </div>
