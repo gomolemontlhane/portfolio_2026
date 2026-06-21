@@ -709,7 +709,27 @@ footer{
     <div class="stat-lbl">Technologies in Stack</div>
   </div>
   <div class="stat-cell r d3">
-    <div class="stat-big">∞</div>
+    <div class="stat-big infinity-container">
+      <svg viewBox="0 0 250 120" xmlns="http://www.w3.org/2000/svg">
+        <path
+          id="infinityPath"
+          class="infinity-track"
+          d="M60,90
+             C20,90 20,30 60,30
+             C100,30 150,90 190,90
+             C230,90 230,30 190,30
+             C150,30 100,90 60,90" />
+        <circle class="glow-dot" r="7">
+          <animateMotion
+            dur="4.5s"
+            repeatCount="indefinite"
+            rotate="auto">
+            <mpath href="#infinityPath"/>
+          </animateMotion>
+        </circle>
+      </svg>
+    </div>
+
     <div class="stat-lbl">Problems Left to Solve</div>
   </div>
 </div>
@@ -930,7 +950,7 @@ footer{
       <div class="p-body">
         <div class="p-counter">Project — 03</div>
         <div class="p-title">AI Powered Web Agency Website</div>
-        <p class="p-desc">A website for an AI powered web agency, built with HTML, CSS, and JavaScript.</p>
+        <p class="p-desc">A website for an AI-powered web agency, built with HTML, CSS, and JavaScript.</p>
         <div class="p-links">
           <a href="https://github.com/yourusername/ai-powered-web-agency-website" class="p-link">GitHub ↗</a>
           <a href="https://ai-powered-web-agency-website-gomolemo.vercel.app/" class="p-link">Live Demo ↗</a>
