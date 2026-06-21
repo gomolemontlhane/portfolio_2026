@@ -261,6 +261,30 @@ nav{
   line-height:1.5;
 }
 
+.infinity-container{
+  --infinity-stroke: 8;
+  --infinity-dot: 10;
+}
+/* ─────────────────────────────────────────────
+   |INFINITY LOOP BASE
+──────────────────────────────────────────── */
+   
+.infinity-container svg{
+  display: block;
+  height:1em;
+  width: auto;
+  aspect-ratio:250/120;
+  overflow: visible;
+}
+.infinity-track{
+  fill: none;
+  stroke:rgba(255, 255, 255, 0.05);
+  stroke-width:var(--infinity-stroke);
+}
+.glow-dot{
+  fill:#f0ede8;
+  filter:drop-shadow(0 0 20px rgba(240,237,232,.85));   
+
 /* ─────────────────────────────────────────────
    MARQUEE STRIP
 ──────────────────────────────────────────── */
