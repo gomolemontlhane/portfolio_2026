@@ -998,31 +998,54 @@ footer{
 <section class="sec" id="contact">
   <!-- left -->
   <div>
-    <div class="eyebrow r">Get in Touch</div>
-    <h2 class="sec-head r d1">
-      Ready to<br>build something<br><span class="ghost">great?</span>
-    </h2>
-    <p class="contact-desc r d2">
-      Whether you have a product to build, a problem that needs an engineering mindset,
-      or just want to connect — I'd love to hear from you.
+    <div class="eyebrow r">Contact</div>
+    <h2 class="sec-head r d1">Let’s build<br><span class="ghost">something.</span></h2>
+
+    <div class="pull-quote r d2">
+      "Building scalable, efficient &amp; <span class="ghost">user-centric solutions</span> at the intersection of engineering and technology."
+    </div>
+    <p class="contact-sub r d3">
+      2+ years of software experience, an electrical engineering foundation,
+      and a relentless drive to ship work that matters.
     </p>
-    <div class="c-cards r d3">
-      <a href="mailto:gomolemontlhane@gmail.com" class="c-card">
-        <div class="c-icon"><i data-lucide="mail"></i></div>
-        <div class="c-info">
-          <h4>Email</h4>
-          <p>gomolemontlhane@gmail.com</p>
-        </div>
-      </a>
-      <a href="https://www.linkedin.com/in/gomolemo-ntlhane/" target="_blank" class="c-card">
-        <div class="c-icon"><i data-lucide="linkedin"></i></div>
-        <div class="c-info">
-          <h4>LinkedIn</h4>
-          <p>gomolemo-ntlhane</p>
-        </div>
-      </a>
+  </div>
+
+  <!-- right -->
+  <div class="contact-right">
+    <form id="contact-form" class="contact-form r" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+
+      <div class="form-row">
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text" required />
+      </div>
+
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+
+      <input type="hidden" name="_subject" value="New portfolio contact form message" />
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <button type="submit" class="btn-solid">Send Message</button>
+      <p id="form-status" aria-live="polite"></p>
+    </form>
+
+    <div class="cta-row r d1">
+      <a href="mailto:youremail@gmail.com" class="btn-solid">Email Me</a>
+      <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank" rel="noopener noreferrer" class="btn-outline">LinkedIn</a>
     </div>
   </div>
+</section>
   <!-- right -->
   <div class="contact-right r d2">
     <div class="pull-quote">
