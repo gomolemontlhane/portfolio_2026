@@ -558,6 +558,55 @@ nav{
 .contact-sub{font-size:.88rem;line-height:1.7;color:rgba(240,237,232,.42);max-width:36ch}
 .cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
 
+
+   /* Experiemental */
+
+   .contact-right{
+  display:flex;
+  flex-direction:column;
+  gap:1.2rem;
+}
+
+.contact-form{
+  width:100%;
+  max-width:680px;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  padding:1.6rem;
+  border:1px solid rgba(240,237,232,.12);
+  border-radius:4px;
+  background:#111;
+}
+.form-row{display:flex;flex-direction:column;gap:.45rem}
+.form-row label{
+  font-size:.62rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(240,237,232,.42);
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  background:#0b0b0b;
+  color:#f0ede8;
+  border:1px solid rgba(240,237,232,.16);
+  border-radius:3px;
+  padding:.85rem .95rem;
+  font-family:'Syne',sans-serif;
+  font-size:.92rem;
+  outline:none;
+}
+.contact-form textarea{resize:vertical;min-height:140px}
+#form-status{
+  font-size:.78rem;
+  color:rgba(240,237,232,.65);
+  min-height:1.2em;
+}
+
+   /* End of Experimental */
+
 /* ─────────────────────────────────────────────
    FOOTER
 ──────────────────────────────────────────── */
@@ -1187,6 +1236,40 @@ document.querySelectorAll('.p-link[href="#"]').forEach(a => {
     alert(label + ' coming soon. Reach out via email or LinkedIn for details.');
   });
 });
+
+   // Experimental
+<script>
+  const form = document.getElementById('contact-form');
+  const statusEl = document.getElementById('form-status');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = 'Sending...';
+      const data = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          statusEl.textContent = 'Message sent successfully. I will get back to you soon.';
+          form.reset();
+        } else {
+          statusEl.textContent = 'Something went wrong. Please try again.';
+        }
+      } catch {
+        statusEl.textContent = 'Network error. Please try again.';
+      }
+    });
+  }
+</script>
+   
+   // End of experiment
+   
 </script>
 </body>
 </html>
