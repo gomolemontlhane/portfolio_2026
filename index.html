@@ -214,11 +214,8 @@ nav{
   background:#f0ede8;color:#0b0b0b;
   border-radius:3px;transition:opacity .25s,transform .2s;
   display:inline-block;
-  border:none;cursor:pointer;
-  font-family:inherit;
 }
 .btn-solid:hover{opacity:.85;transform:translateY(-2px)}
-.btn-solid:disabled{opacity:.5;cursor:not-allowed;transform:none}
 .btn-outline{
   font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   padding:.9rem 2rem;
@@ -562,52 +559,6 @@ nav{
 .cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
 
 /* ─────────────────────────────────────────────
-   CONTACT FORM
-──────────────────────────────────────────── */
-#message{padding-top:0}
-.contact-form-wrap{
-  max-width:760px;margin-top:3.5rem;
-  border:1px solid rgba(240,237,232,.12);border-radius:4px;
-  background:#111;padding:2.8rem;
-}
-.contact-form{display:flex;flex-direction:column;gap:1.4rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-.form-group{display:flex;flex-direction:column;gap:.55rem}
-.form-group label{
-  font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(240,237,232,.4);
-}
-.form-group input,
-.form-group textarea{
-  background:transparent;
-  border:1px solid rgba(240,237,232,.18);
-  border-radius:3px;
-  padding:.85rem 1rem;
-  font-family:'Syne',sans-serif;
-  font-size:.9rem;
-  color:#f0ede8;
-  transition:border-color .2s,background .2s;
-  cursor:auto;
-}
-.form-group input:focus,
-.form-group textarea:focus{
-  outline:none;
-  border-color:rgba(240,237,232,.6);
-  background:rgba(240,237,232,.03);
-}
-.form-group textarea{resize:vertical;min-height:130px;font-family:inherit}
-.form-honeypot{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
-.form-footer{
-  display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;margin-top:.4rem;
-}
-.form-status{
-  font-size:.78rem;letter-spacing:.02em;
-}
-.form-status.success{color:#a9e8b8}
-.form-status.error{color:#f0a3a3}
-.form-status.sending{color:rgba(240,237,232,.5)}
-
-/* ─────────────────────────────────────────────
    FOOTER
 ──────────────────────────────────────────── */
 footer{
@@ -672,8 +623,6 @@ footer{
   .mindsets-grid{grid-template-columns:1fr}
   footer{grid-template-columns:1fr;padding:3rem 1.5rem calc(2.5rem + 36px)}
   .footer-bottom{flex-direction:column;gap:.4rem;text-align:center;padding:1.2rem 1.5rem calc(1.2rem + 36px)}
-  .form-row{grid-template-columns:1fr}
-  .contact-form-wrap{padding:1.8rem}
 }
 </style>
 </head>
@@ -706,7 +655,7 @@ footer{
   </ul>
   <div class="nav-right">
     <a
-      href="#message"
+      href="#contact"
       class="nav-cta"
     >Hire Me →</a>
     <div class="hamburger" id="js-ham">
@@ -735,7 +684,7 @@ footer{
       </p>
       <div class="hero-ctas">
         <a href="#projects" class="btn-solid">View Projects</a>
-        <a href="#message" class="btn-outline">Get in Touch</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
       </div>
     </div>
   </div>
@@ -1084,60 +1033,9 @@ footer{
       and a relentless drive to ship work that matters.
     </p>
     <div class="cta-row">
-      <a href="#message" class="btn-solid">Send a Message →</a>
+      <a href="mailto:gomolemontlhane@gmail.com" class="btn-solid">Send a Message →</a>
       <a href="assets/2025%20CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline">Download CV</a>
     </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     MESSAGE FORM (submits via Netlify Forms
-     and arrives straight in your Gmail inbox)
-═════════════════════════════════════════ -->
-<section class="sec" id="message">
-  <div class="eyebrow r">Send a Message</div>
-  <h2 class="sec-head r d1">
-    Skip the inbox<br>hop — <span class="ghost">write here.</span>
-  </h2>
-
-  <div class="contact-form-wrap r d2">
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      id="contact-form"
-      class="contact-form"
-    >
-      <!-- Required by Netlify so it detects this form at build/deploy time -->
-      <input type="hidden" name="form-name" value="contact" />
-
-      <!-- Honeypot spam trap: real users never see or fill this -->
-      <p class="form-honeypot">
-        <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-      </p>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-      </div>
-
-      <div class="form-footer">
-        <button type="submit" class="btn-solid" id="form-submit-btn">Send Message →</button>
-        <span class="form-status" id="form-status"></span>
-      </div>
-    </form>
   </div>
 </section>
 
@@ -1156,7 +1054,7 @@ footer{
       <li><a href="#capabilities">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#message">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
   <div class="f-col">
@@ -1213,9 +1111,6 @@ document.querySelectorAll('a,button,.cap-card,.p-card,.c-card,.edu-card,.pill').
   el.addEventListener('mouseenter', () => cur.classList.add('big'));
   el.addEventListener('mouseleave', () => cur.classList.remove('big'));
 });
-document.querySelectorAll('input,textarea').forEach(el => {
-  el.addEventListener('mouseenter', () => cur.classList.remove('big'));
-});
 
 /* ── mobile menu ── */
 document.getElementById('js-ham').addEventListener('click', () => {
@@ -1269,58 +1164,6 @@ document.querySelectorAll('.p-link[href="#"]').forEach(a => {
     alert(label + ' coming soon. Reach out via email or LinkedIn for details.');
   });
 });
-
-/* ── contact form: submit to Netlify Forms without leaving the page ── */
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-const formBtn = document.getElementById('form-submit-btn');
-
-function encodeForm(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-}
-
-if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Honeypot check: if the hidden field got filled in, silently drop it
-    const honeypot = contactForm.querySelector('input[name="bot-field"]');
-    if (honeypot && honeypot.value) {
-      formStatus.textContent = 'Message sent.';
-      formStatus.className = 'form-status success';
-      contactForm.reset();
-      return;
-    }
-
-    const formData = new FormData(contactForm);
-    const payload = {};
-    formData.forEach((value, key) => { payload[key] = value; });
-
-    formBtn.disabled = true;
-    formStatus.textContent = 'Sending…';
-    formStatus.className = 'form-status sending';
-
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encodeForm(payload)
-    })
-      .then(() => {
-        formStatus.textContent = 'Thanks — your message is on its way. I\'ll reply by email soon.';
-        formStatus.className = 'form-status success';
-        contactForm.reset();
-      })
-      .catch(() => {
-        formStatus.textContent = 'Something went wrong. Please email me directly at gomolemontlhane@gmail.com.';
-        formStatus.className = 'form-status error';
-      })
-      .finally(() => {
-        formBtn.disabled = false;
-      });
-  });
-}
 </script>
 </body>
 </html>
